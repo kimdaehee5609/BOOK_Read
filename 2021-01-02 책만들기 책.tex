@@ -1,0 +1,537 @@
+%	-------------------------------------------------------------------------------
+% 
+%			2021년 
+%			1월 
+%			2일 
+%			첫작업
+%
+%
+%
+%
+%
+%
+%
+%	-------------------------------------------------------------------------------
+
+%	\documentclass[12pt, a3paper, oneside]{book}
+	\documentclass[12pt, a4paper, oneside]{book}
+%	\documentclass[12pt, a4paper, landscape, oneside]{book}
+
+		% --------------------------------- 페이지 스타일 지정
+		\usepackage{geometry}
+%		\geometry{landscape=true	}
+		\geometry{top 			=10em}
+		\geometry{bottom			=10em}
+		\geometry{left			=8em}
+		\geometry{right			=8em}
+		\geometry{headheight		=4em} % 머리말 설치 높이
+		\geometry{headsep		=2em} % 머리말의 본문과의 띠우기 크기
+		\geometry{footskip		=4em} % 꼬리말의 본문과의 띠우기 크기
+% 		\geometry{showframe}
+	
+%		paperwidth 	= left + width + right (1)
+%		paperheight 	= top + height + bottom (2)
+%		width 		= textwidth (+ marginparsep + marginparwidth) (3)
+%		height 		= textheight (+ headheight + headsep + footskip) (4)	
+
+
+
+		%	===================================================================
+		%	package
+		%	===================================================================
+%			\usepackage[hangul]{kotex}				% 한글 사용
+			\usepackage{kotex}					% 한글 사용
+			\usepackage[unicode]{hyperref}			% 한글 하이퍼링크 사용
+
+		% ------------------------------ 수학 수식
+			\usepackage{amssymb,amsfonts,amsmath}	% 수학 수식 사용
+			\usepackage{mathtools}				% amsmath 확장판
+
+			\usepackage{scrextend}				% 
+		
+
+		% ------------------------------ LIST
+			\usepackage{enumerate}			%
+			\usepackage{enumitem}			%
+			\usepackage{tablists}				%	수학문제의 보기 등을 표현하는데 사용
+										%	tabenum
+
+
+		% ------------------------------ table 
+			\usepackage{longtable}			%
+			\usepackage{tabularx}			%
+			\usepackage{tabu}				%
+
+
+
+
+		% ------------------------------ 
+			\usepackage{setspace}			%
+			\usepackage{booktabs}		% table
+			\usepackage{color}			%
+			\usepackage{multirow}			%
+			\usepackage{boxedminipage}	% 미니 페이지
+			\usepackage[pdftex]{graphicx}	% 그림 사용
+			\usepackage[final]{pdfpages}		% pdf 사용
+			\usepackage{framed}			% pdf 사용
+
+			
+			\usepackage{fix-cm}	
+			\usepackage[english]{babel}
+	
+		%	=======================================================================================
+		% 	tikz package
+		% 	
+		% 	--------------------------------- 	
+			\usepackage{tikz}%
+			\usetikzlibrary{arrows,positioning,shapes}
+			\usetikzlibrary{mindmap}			
+			
+
+		% --------------------------------- 	page
+			\usepackage{afterpage}		% 다음페이지가 나온면 어떻게 하라는 명령 정의 패키지
+%			\usepackage{fullpage}			% 잘못 사용하면 다 흐트러짐 주의해서 사용
+%			\usepackage{pdflscape}		% 
+			\usepackage{lscape}			%	 
+
+
+			\usepackage{blindtext}
+	
+		% --------------------------------- font 사용
+			\usepackage{pifont}				%
+			\usepackage{textcomp}
+			\usepackage{gensymb}
+			\usepackage{marvosym}
+
+
+
+		% Package --------------------------------- 
+
+			\usepackage{tablists}				%
+
+
+		% Package --------------------------------- 
+			\usepackage[framemethod=TikZ]{mdframed}				% md framed package
+			\usepackage{smartdiagram}								% smart diagram package
+
+
+
+		% Package ---------------------------------    연습문제 
+
+			\usepackage{exsheets}				%
+
+			\SetupExSheets{solution/print=true}
+			\SetupExSheets{question/type=exam}
+			\SetupExSheets[points]{name=point,name-plural=points}
+
+
+		% --------------------------------- 페이지 스타일 지정
+
+		\usepackage[Sonny]		{fncychap}
+
+			\makeatletter
+			\ChNameVar	{\Large\bf}
+			\ChNumVar	{\Huge\bf}
+			\ChTitleVar		{\Large\bf}
+			\ChRuleWidth	{0.5pt}
+			\makeatother
+
+%		\usepackage[Lenny]		{fncychap}
+%		\usepackage[Glenn]		{fncychap}
+%		\usepackage[Conny]		{fncychap}
+%		\usepackage[Rejne]		{fncychap}
+%		\usepackage[Bjarne]	{fncychap}
+%		\usepackage[Bjornstrup]{fncychap}
+
+		\usepackage{fancyhdr}
+		\pagestyle{fancy}
+		\fancyhead{} % clear all fields
+		\fancyhead[LO]{\footnotesize \leftmark}
+		\fancyhead[RE]{\footnotesize \leftmark}
+		\fancyfoot{} % clear all fields
+		\fancyfoot[LE,RO]{\large \thepage}
+		%\fancyfoot[CO,CE]{\empty}
+		\renewcommand{\headrulewidth}{1.0pt}
+		\renewcommand{\footrulewidth}{0.4pt}
+	
+	
+	
+		%	--------------------------------------------------------------------------------------- 
+		% 	tritlesec package
+		% 	
+		% 	
+		% 	------------------------------------------------------------------ section 스타일 지정
+	
+			\usepackage{titlesec}
+		
+		% 	----------------------------------------------------------------- section 글자 모양 설정
+			\titleformat*{\section}					{\large\bfseries}
+			\titleformat*{\subsection}				{\normalsize\bfseries}
+			\titleformat*{\subsubsection}			{\normalsize\bfseries}
+			\titleformat*{\paragraph}				{\normalsize\bfseries}
+			\titleformat*{\subparagraph}				{\normalsize\bfseries}
+	
+		% 	----------------------------------------------------------------- section 번호 설정
+			\renewcommand{\thepart}				{\arabic{part}.}
+			\renewcommand{\thesection}				{\arabic{section}.}
+			\renewcommand{\thesubsection}			{\thesection\arabic{subsection}.}
+			\renewcommand{\thesubsubsection}		{\thesubsection\arabic{subsubsection}}
+			\renewcommand\theparagraph 			{$\blacksquare$ \hspace{3pt}}
+
+		% 	----------------------------------------------------------------- section 페이지 나누기 설정
+			\let\stdsection\section
+			\renewcommand\section{\newpage\stdsection}
+
+
+
+		%	--------------------------------------------------------------------------------------- 
+		% 	\titlespacing*{commandi} {left} {before-sep} {after-sep} [right-sep]		
+		% 	left
+		%	before-sep		:  수직 전 간격
+		% 	after-sep	 	:  수직으로 후 간격
+		%	right-sep
+
+			\titlespacing*{\section} 			{0pt}{1.0em}{1.0em}
+			\titlespacing*{\subsection}	  		{0ex}{1.0em}{1.0em}
+			\titlespacing*{\subsubsection}		{0ex}{1.0em}{1.0em}
+			\titlespacing*{\paragraph}			{0em}{1.5em}{1.0em}
+			\titlespacing*{\subparagraph}		{4em}{1.0em}{1.0em}
+	
+		%	\titlespacing*{\section} 			{0pt}{0.0\baselineskip}{0.0\baselineskip}
+		%	\titlespacing*{\subsection}	  		{0ex}{0.0\baselineskip}{0.0\baselineskip}
+		%	\titlespacing*{\subsubsection}		{6ex}{0.0\baselineskip}{0.0\baselineskip}
+		%	\titlespacing*{\paragraph}			{6pt}{0.0\baselineskip}{0.0\baselineskip}
+	
+
+		% --------------------------------- recommend		섹션별 페이지 상단 여백
+		\newcommand{\SectionMargin}				{\newpage  \null \vskip 2cm}
+		\newcommand{\SubSectionMargin}			{\newpage  \null \vskip 2cm}
+		\newcommand{\SubSubSectionMargin}		{\newpage  \null \vskip 2cm}
+
+
+		%	--------------------------------------------------------------------------------------- 
+		% 	toc 설정  - table of contents
+		% 	
+		% 	
+		% 	----------------------------------------------------------------  문서 기본 사항 설정
+			\setcounter{secnumdepth}{4} 		% 문단 번호 깊이
+			\setcounter{tocdepth}{2} 			% 문단 번호 깊이 - 목차 출력시 출력 범위
+
+			\setlength{\parindent}{0cm} 		% 문서 들여 쓰기를 하지 않는다.
+
+
+		%	--------------------------------------------------------------------------------------- 
+		% 	mini toc 설정
+		% 	
+		% 	
+		% 	--------------------------------------------------------- 장의 목차  minitoc package
+			\usepackage{minitoc}
+
+			\setcounter{minitocdepth}{1}    	%  Show until subsubsections in minitoc
+%			\setlength{\mtcindent}{12pt} 	% default 24pt
+			\setlength{\mtcindent}{24pt} 	% default 24pt
+
+		% 	--------------------------------------------------------- part toc
+		%	\setcounter{parttocdepth}{2} 	%  default
+			\setcounter{parttocdepth}{0}
+		%	\setlength{\ptcindent}{0em}		%  default  목차 내용 들여 쓰기
+			\setlength{\ptcindent}{0em}         
+
+
+		% 	--------------------------------------------------------- section toc
+
+			\renewcommand{\ptcfont}{\normalsize\rm} 		%  default
+			\renewcommand{\ptcCfont}{\normalsize\bf} 	%  default
+			\renewcommand{\ptcSfont}{\normalsize\rm} 	%  default
+
+
+		%	=======================================================================================
+		% 	tocloft package
+		% 	
+		% 	------------------------------------------ 목차의 목차 번호와 목차 사이의 간격 조정
+			\usepackage{tocloft}
+
+		% 	------------------------------------------ 목차의 내어쓰기 즉 왼쪽 마진 설정
+			\setlength{\cftsecindent}{2em}			%  section
+
+		% 	------------------------------------------ 목차의 목차 번호와 목차 사이의 간격 조정
+			\setlength{\cftsecnumwidth}{2em}		%  section
+
+
+
+
+
+		%	=======================================================================================
+		% 	flowchart  package
+		% 	
+		% 	------------------------------------------ 목차의 목차 번호와 목차 사이의 간격 조정
+			\usepackage{flowchart}
+			\usetikzlibrary{arrows}
+
+
+		%	=======================================================================================
+		% 		makeindex package
+		% 	
+		% 	------------------------------------------ 목차의 목차 번호와 목차 사이의 간격 조정
+%			\usepackage{makeindex}
+%			\usepackage{makeidy}
+
+
+		%	=======================================================================================
+		% 		각주와 미주
+		% 	
+
+		\usepackage{endnotes} %미주 사용
+
+
+		%	=======================================================================================
+		% 	줄 간격 설정
+		% 	
+		% 	
+		% 	--------------------------------- 	줄간격 설정
+			\doublespace
+%			\onehalfspace
+%			\singlespace
+		
+		
+
+	% 	============================================================================== itemi Global setting
+
+	
+		%	-------------------------------------------------------------------------------
+		%		Vertical spacing
+		%	-------------------------------------------------------------------------------
+			\setlist[itemize]{topsep=0.0em}			% 상단의 여유치
+			\setlist[itemize]{partopsep=0.0em}			% 
+			\setlist[itemize]{parsep=0.0em}			% 
+%			\setlist[itemize]{itemsep=0.0em}			% 
+			\setlist[itemize]{noitemsep}				% 
+			
+		%	-------------------------------------------------------------------------------
+		%		Horizontal spacing
+		%	-------------------------------------------------------------------------------
+			\setlist[itemize]{labelwidth=1em}			%  라벨의 표시 폭
+			\setlist[itemize]{leftmargin=8em}			%  본문 까지의 왼쪽 여백  - 4em
+			\setlist[itemize]{labelsep=3em} 			%  본문에서 라벨까지의 거리 -  3em
+			\setlist[itemize]{rightmargin=0em}			% 오른쪽 여백  - 4em
+			\setlist[itemize]{itemindent=0em} 			% 점 내민 거리 label sep 과 같은면 점위치 까지 내민다
+			\setlist[itemize]{listparindent=3em}		% 본문 드려쓰기 간격
+	
+	
+			\setlist[itemize]{ topsep=0.0em, 			%  상단의 여유치
+						partopsep=0.0em, 		%  
+						parsep=0.0em, 
+						itemsep=0.0em, 
+						labelwidth=1em, 
+						leftmargin=2.5em,
+						labelsep=2em,			%  본문에서 라벨 까지의 거리
+						rightmargin=0em,		% 오른쪽 여백  - 4em
+						itemindent=0em, 		% 점 내민 거리 label sep 과 같은면 점위치 까지 내민다
+						listparindent=0em}		% 본문 드려쓰기 간격
+	
+%			\begin{itemize}
+	
+		%	-------------------------------------------------------------------------------
+		%		Label
+		%	-------------------------------------------------------------------------------
+			\renewcommand{\labelitemi}{$\bullet$}
+			\renewcommand{\labelitemii}{$\bullet$}
+%			\renewcommand{\labelitemii}{$\cdot$}
+			\renewcommand{\labelitemiii}{$\diamond$}
+			\renewcommand{\labelitemiv}{$\ast$}		
+	
+%			\renewcommand{\labelitemi}{$\blacksquare$}   	% 사각형 - 찬것
+%			\renewcommand\labelitemii{$\square$}		% 사각형 - 빈것	
+			
+
+
+
+
+
+
+% ------------------------------------------------------------------------------
+% Begin document (Content goes below)
+% ------------------------------------------------------------------------------
+	\begin{document}
+	
+			\dominitoc
+			\doparttoc			
+
+			\title{책 만드는 책}
+			\author{김대희}
+			\date{ 2021년 1월 중앙도서관}
+			\maketitle
+
+
+			\tableofcontents 		% 목차 출력
+%			\listoffigures 			% 그림 목차 출력
+			\cleardoublepage
+			\listoftables 			% 표 목차 출력
+
+
+
+
+
+		\mdfdefinestyle	{con_specification} {
+						outerlinewidth		=1pt			,%
+						innerlinewidth		=2pt			,%
+						outerlinecolor		=blue!70!black	,%
+						innerlinecolor		=white 			,%
+						roundcorner			=4pt			,%
+						skipabove			=1em 			,%
+						skipbelow			=1em 			,%
+						leftmargin			=0em			,%
+						rightmargin			=0em			,%
+						innertopmargin		=2em 			,%
+						innerbottommargin 	=2em 			,%
+						innerleftmargin		=1em 			,%
+						innerrightmargin		=1em 			,%
+						backgroundcolor		=gray!4			,%
+						frametitlerule		=true 			,%
+						frametitlerulecolor	=white			,%
+						frametitlebackgroundcolor=black		,%
+						frametitleaboveskip=1em 			,%
+						frametitlebelowskip=1em 			,%
+						frametitlefontcolor=white 			,%
+						}
+
+
+
+%	================================================================== Part			개요
+	\addtocontents{toc}{\protect\newpage}
+	\part{개요}
+	\noptcrule
+	\parttoc				
+
+% ----------------------------------------------------------------------------- 	2020.09
+%										
+% -----------------------------------------------------------------------------										
+	\section{개요}
+
+	\begin{itemize}
+		\item 제목  	: 책 만드는 책
+		\item 저자  	: 최진규 김민희 지음
+		\item 출판사  	: 포도밥
+		\item 출판일  	: 초판 1쇄 2017년 6월 26일 \\
+		\item 			개정판 1쇄 발행 2018년 10월 17일
+		\item 도서관 	: 중앙도서관
+		\item 분류번호 	: 011.4 6
+		\item 대출일 	: 2021.01.02
+		\item 반납일 	: 2021.01.01.16 예정
+	\end{itemize}	
+	
+
+%	================================================================== Part		지은이
+	\addtocontents{toc}{\protect\newpage}
+	\part{ 지은이  }
+	\noptcrule
+	\parttoc				
+
+
+% ----------------------------------------------------------------------------- 	최진규
+%										
+% -----------------------------------------------------------------------------										
+	\section{최진규}
+
+
+% ----------------------------------------------------------------------------- 	김민희
+%										
+% -----------------------------------------------------------------------------										
+	\section{김민희}
+
+
+
+%	================================================================== Part			본문
+	\addtocontents{toc}{\protect\newpage}
+	\part{본문}
+	\noptcrule
+	\parttoc				
+
+
+% ----------------------------------------------------------------------------- 	서문
+%										
+% -----------------------------------------------------------------------------										
+	\section{서문}
+
+% ----------------------------------------------------------------------------- 	시작하기전에2020.08
+%										
+% -----------------------------------------------------------------------------										
+	\section{시작하기 전에}
+
+% ----------------------------------------------------------------------------- 	step1 얇은 책(중철제본)}
+%										
+% -----------------------------------------------------------------------------										
+	\section{step1 얇은 책(중철제본)}
+
+	지금부터 최대한 간단한 과정으로 8페이지 중철제본 책을 만들어 볼거예요
+	중철이란 책을 접어서 중간을 스테이플로 고정하는 제본을 말해요
+	단출한 8페이지 책 만들기를 통해 인디자인의 주로 도구들을 익히는 것이 이번 스텝의 목표입니다
+	비록 간단하지만 앞으로 해나갈 작업의 핵심이니 이 과정을 찬찬히 잘 익혀주세요
+
+	\paragraph{폭}
+	\paragraph{높이}
+	\paragraph{도련}
+	\paragraph{슬러그}
+	\paragraph{여백}
+			여백값은 책의 성격과 필요에 따라 매번 달라집니다
+			절대적인 기준은 아니지만, 흔히는 아래쪽(30mm)과 안쪽 여백(25mm)이 넓고 위쪽(20mm)과 바깥쪽 여백(20mm)이 좁은 특징이 있습니다.
+			안쪽이 넓은 것은 책이 묶이는 곳이기 때문이고 
+			아래쪽이 넓은 것은 주로 판면 하단에 페이지 번호 및 면주를 적기 때문이다.
+			  
+
+	\paragraph{중철제본의 페이지수}
+	중철제본 책자의 경우 앞뒤로 4페이지인 종이를 엮어 만들기 때문에 본문 페이지수가 4의 배수구여야 합니다.
+	8, 12, 16, 20페이지 등으로 페이지수를 맞추어야 하는 것이지요. 32페이지(4*9=32,9장) 이상이 되면 무선 제본 등 다른 제본을 선택하는 경우가 많습니다
+
+	
+	\paragraph{글꼴}
+	\paragraph{글자 크기}
+	\paragraph{자간}
+	\paragraph{행간}
+
+
+% ----------------------------------------------------------------------------- 	step2 얇은 책(중철제본)}
+%										
+% -----------------------------------------------------------------------------										
+	\section{step2 얇은 책(중철제본)}
+
+% ----------------------------------------------------------------------------- 	step3 얇은 책(중철제본)}
+%										
+% -----------------------------------------------------------------------------										
+	\section{step3 얇은 책(중철제본)}
+
+% ----------------------------------------------------------------------------- 	step4 얇은 책(중철제본)}
+%										
+% -----------------------------------------------------------------------------										
+	\section{step4 얇은 책(중철제본)}
+	
+
+
+
+
+%	================================================================== Part			2019
+	\addtocontents{toc}{\protect\newpage}
+	\part{ 2019년  }
+	\noptcrule
+	\parttoc				
+
+
+
+
+
+
+
+% ------------------------------------------------------------------------------
+% End document
+% ------------------------------------------------------------------------------
+\end{document}
+
+
+	\href{https://www.youtube.com/watch?v=SpqKCQZQBcc}{태양경배자세A}
+	\href{https://www.youtube.com/watch?v=CL3czAIUDFY}{태양경배자세A}
+
+
+https://docs.google.com/spreadsheets/d/1-wRuFU1OReWrtxkhaw9uh5mxouNYRP8YFgykMh2G_8c/edit#gid=0
++
+
+https://seoyeongcokr-my.sharepoint.com/:f:/g/personal/02017_seoyoungeng_com/Ev8nnOI89D1LnYu90SGaVj0BTuckQ46vQe1HiVv-R4qeqQ?e=S3iAHi
