@@ -8,4 +8,4 @@ BOOK_Read
 
 
 
-https://github.com/kimdaehee5609/BOOK_Read.git
+git clone https://github.com/kimdaehee5609/BOOK_Read.git
